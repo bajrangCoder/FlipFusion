@@ -33,13 +33,14 @@
 	let columns = Math.ceil(selectedLevel.size / rows);
 
 	$: {
-		size = selectedLevel.size;
-		time = selectedLevel.time;
-		grid = createGrid(); // Update the grid when the level changes
-		maxMatches = grid.length / 2;
-		rows = Math.ceil(selectedLevel.size / 5);
-		columns = Math.ceil(selectedLevel.size / rows);
-	}
+        size = selectedLevel.size;
+        time = selectedLevel.time;
+        maxMatches = grid.length / 2;
+        rows = Math.ceil(size / 5); // Use the updated size variable here
+        columns = Math.ceil(size / rows);
+        grid = createGrid(); // Update the grid when the level or card mode changes
+    }
+
 
 	function changeDifficulty(level) {
 		selectedLevel = level;
