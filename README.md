@@ -1,38 +1,57 @@
-# create-svelte
+# FlipFusion with SvelteKit
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Welcome to the FlipFusion , a Matching Card Game built with SvelteKit! This is a fun and challenging memory game where players need to match pairs of cards with the same symbol or images. The game features: different levels of difficulty, a timer, and a variety of symbols and images to match.
 
-## Creating a project
+## Getting Started
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. **Clone the Repository**: Clone this repository to your local machine using Git.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+   ```sh
+   git clone https://github.com/your-username/matching-card-game.git
+   cd matching-card-game
+   ```
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+2. **Install Dependencies**: Install the project dependencies using npm or yarn.
 
-## Developing
+   ```sh
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+3. **Start the Development Server**: Start the development server and run the game locally.
 
-```bash
-npm run dev
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm run dev
+   ```
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+4. **Access the Game**: Open your browser and visit http://localhost:5173 to access the game.
 
-## Building
+## Features
 
-To create a production version of your app:
+- Multiple levels of difficulty: Choose from easy, medium, and hard levels.
+- Timer: Keep track of the time left to complete the game.
+- Customizable: You can customize the game settings, such as difficulty levels, modes.
+- Responsive: The game is designed to work on various screen sizes and devices.
 
-```bash
-npm run build
-```
+## Technologies Used
 
-You can preview the production build with `npm run preview`.
+- SvelteKit
+- HTML, CSS
+- Typescript
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify the code as needed.
+
+## Acknowledgements
+
+- Logo & Images from Icons8 (https://icons8.com/)
+- SvelteKit (https://kit.svelte.dev/)
+- Styles Inspiration and Game Idea from (https://joyofcode.xyz/svelte-matching-game)
