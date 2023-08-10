@@ -4,7 +4,7 @@
 
 	type State = 'start' | 'playing' | 'paused' | 'won' | 'lost';
 	const difficultyLevels = [
-		{ label: 'Very Easy', size: 8, time: 120 },
+		{ label: 'Very Easy', size: 10, time: 100 },
 		{ label: 'Easy', size: 16, time: 90 },
 		{ label: 'Medium', size: 20, time: 60 },
 		{ label: 'Hard', size: 27, time: 45 },
@@ -31,20 +31,23 @@
 	let time = selectedLevel.time;
 	let rows = Math.ceil(selectedLevel.size / 5);
 	let columns = Math.ceil(selectedLevel.size / rows);
-
-	$: {
-        size = selectedLevel.size;
+    
+    $: {
         time = selectedLevel.time;
+        size = selectedLevel.size;
+        grid = createGrid();
         maxMatches = grid.length / 2;
-        rows = Math.ceil(size / 5); // Use the updated size variable here
+        rows = Math.ceil(size / 5);
         columns = Math.ceil(size / rows);
-        grid = createGrid(); // Update the grid when the level or card mode changes
     }
-
-
+    
 	function changeDifficulty(level) {
 		selectedLevel = level;
+		time = level.time;
+		size = level.size;
 		resetGame();
+		console.log(grid)
+		
 	}
 	function changeCardMode(mode) {
 		selectedCardMode = mode;
@@ -56,13 +59,14 @@
 		let cards = new Set<string>();
 		// half because we duplicate the cards
 		let maxSize = size / 2;
+		let cardArray = selectedCardMode.value || emoji;
 
 		while (cards.size < maxSize) {
 			// pick random emoji
-			const randomIndex = Math.floor(Math.random() * selectedCardMode.value.length);
-			cards.add(selectedCardMode.value[randomIndex]);
+			const randomIndex = Math.floor(Math.random() * cardArray.length);
+			cards.add(cardArray[randomIndex]);
 		}
-
+        console.log(cards.size)
 		// duplicate and shuffle cards
 		return shuffle([...cards, ...cards]);
 	}
