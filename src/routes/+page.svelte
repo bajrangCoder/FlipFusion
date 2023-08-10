@@ -46,8 +46,6 @@
 		time = level.time;
 		size = level.size;
 		resetGame();
-		console.log(grid)
-		
 	}
 	function changeCardMode(mode) {
 		selectedCardMode = mode;
@@ -66,7 +64,7 @@
 			const randomIndex = Math.floor(Math.random() * cardArray.length);
 			cards.add(cardArray[randomIndex]);
 		}
-        console.log(cards.size)
+
 		// duplicate and shuffle cards
 		return shuffle([...cards, ...cards]);
 	}
@@ -193,6 +191,7 @@
 	.cards {
 		display: grid;
 		gap: 0.4rem;
+                grid-template-columns: repeat(5, 1fr);
 
 		@media (max-width: 768px) {
 			grid-template-columns: repeat(auto-fill, minmax(calc(50% - 0.4rem), 1fr));
@@ -200,8 +199,8 @@
 		}
 	}
 	.card {
-		height: 14vw; /* 14% of viewport width */
-		width: 14vw;
+		height: 8vw;
+		width: 8vw;
 		background-color: var(--bg-2);
 		transition: transform 0.3s ease-out;
 		transform-style: preserve-3d;
@@ -261,7 +260,7 @@
 		}
 	}
 
-	/* +page.svelte */
+	
 	.settings-container {
 		position: absolute;
 		top: 1rem;
