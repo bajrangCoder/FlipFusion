@@ -199,8 +199,8 @@
 		}
 	}
 	.card {
-		height: 8vw;
-		width: 8vw;
+		height: 10vw;
+		width: 10vw;
 		background-color: var(--bg-2);
 		transition: transform 0.3s ease-out;
 		transform-style: preserve-3d;
